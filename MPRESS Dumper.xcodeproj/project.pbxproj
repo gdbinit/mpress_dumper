@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B5DD80918954A8300BC5B06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5DD80818954A8300BC5B06 /* Cocoa.framework */; };
+		7B5DD81318954A8300BC5B06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B5DD81118954A8300BC5B06 /* InfoPlist.strings */; };
+		7B5DD81518954A8300BC5B06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5DD81418954A8300BC5B06 /* main.m */; };
+		7B5DD81918954A8300BC5B06 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7B5DD81718954A8300BC5B06 /* Credits.rtf */; };
+		7B5DD81C18954A8300BC5B06 /* mdumperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5DD81B18954A8300BC5B06 /* mdumperAppDelegate.m */; };
+		7B5DD82118954A8300BC5B06 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B5DD82018954A8300BC5B06 /* Images.xcassets */; };
+		7B5DD83D1895882100BC5B06 /* dumper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5DD83C1895882100BC5B06 /* dumper.m */; };
+		7B5DD8401895976800BC5B06 /* breakpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5DD83F1895976800BC5B06 /* breakpoints.m */; };
+		7B5DD84D18959FFF00BC5B06 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B5DD84C18959FFF00BC5B06 /* Entitlements.plist */; };
+		7B70A8901966C66F0010ABD3 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 7B70A88F1966C66F0010ABD3 /* README */; };
+		7BC1B618196373C30062C73D /* X86ATTInstPrinter.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5DE196373C30062C73D /* X86ATTInstPrinter.c */; };
+		7BC1B619196373C30062C73D /* X86Disassembler.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5DF196373C30062C73D /* X86Disassembler.c */; };
+		7BC1B61A196373C30062C73D /* X86DisassemblerDecoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5E1196373C30062C73D /* X86DisassemblerDecoder.c */; };
+		7BC1B61B196373C30062C73D /* X86GenAsmWriter.inc in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5E4196373C30062C73D /* X86GenAsmWriter.inc */; };
+		7BC1B61C196373C30062C73D /* X86GenAsmWriter1.inc in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5E5196373C30062C73D /* X86GenAsmWriter1.inc */; };
+		7BC1B61D196373C30062C73D /* X86GenAsmWriter1_reduce.inc in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5E6196373C30062C73D /* X86GenAsmWriter1_reduce.inc */; };
+		7BC1B61E196373C30062C73D /* X86GenAsmWriter_reduce.inc in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5E7196373C30062C73D /* X86GenAsmWriter_reduce.inc */; };
+		7BC1B61F196373C30062C73D /* X86GenDisassemblerTables.inc in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5E8196373C30062C73D /* X86GenDisassemblerTables.inc */; };
+		7BC1B620196373C30062C73D /* X86GenDisassemblerTables_reduce.inc in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5E9196373C30062C73D /* X86GenDisassemblerTables_reduce.inc */; };
+		7BC1B621196373C30062C73D /* X86GenInstrInfo.inc in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5EA196373C30062C73D /* X86GenInstrInfo.inc */; };
+		7BC1B622196373C30062C73D /* X86GenInstrInfo_reduce.inc in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5EB196373C30062C73D /* X86GenInstrInfo_reduce.inc */; };
+		7BC1B623196373C30062C73D /* X86GenRegisterInfo.inc in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5EC196373C30062C73D /* X86GenRegisterInfo.inc */; };
+		7BC1B624196373C30062C73D /* X86IntelInstPrinter.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5EE196373C30062C73D /* X86IntelInstPrinter.c */; };
+		7BC1B625196373C30062C73D /* X86Mapping.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5EF196373C30062C73D /* X86Mapping.c */; };
+		7BC1B626196373C30062C73D /* X86Module.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5F1196373C30062C73D /* X86Module.c */; };
+		7BC1B627196373C30062C73D /* XCoreDisassembler.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5F3196373C30062C73D /* XCoreDisassembler.c */; };
+		7BC1B628196373C30062C73D /* XCoreGenAsmWriter.inc in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5F5196373C30062C73D /* XCoreGenAsmWriter.inc */; };
+		7BC1B629196373C30062C73D /* XCoreGenDisassemblerTables.inc in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5F6196373C30062C73D /* XCoreGenDisassemblerTables.inc */; };
+		7BC1B62A196373C30062C73D /* XCoreGenInstrInfo.inc in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5F7196373C30062C73D /* XCoreGenInstrInfo.inc */; };
+		7BC1B62B196373C30062C73D /* XCoreGenRegisterInfo.inc in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5F8196373C30062C73D /* XCoreGenRegisterInfo.inc */; };
+		7BC1B62C196373C30062C73D /* XCoreInstPrinter.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5F9196373C30062C73D /* XCoreInstPrinter.c */; };
+		7BC1B62D196373C30062C73D /* XCoreMapping.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5FB196373C30062C73D /* XCoreMapping.c */; };
+		7BC1B62E196373C30062C73D /* XCoreModule.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5FD196373C30062C73D /* XCoreModule.c */; };
+		7BC1B62F196373C30062C73D /* cs.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B5FE196373C30062C73D /* cs.c */; };
+		7BC1B630196373C30062C73D /* MCInst.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B60E196373C30062C73D /* MCInst.c */; };
+		7BC1B631196373C30062C73D /* MCInstrDesc.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B610196373C30062C73D /* MCInstrDesc.c */; };
+		7BC1B632196373C30062C73D /* MCRegisterInfo.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B612196373C30062C73D /* MCRegisterInfo.c */; };
+		7BC1B633196373C30062C73D /* SStream.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B614196373C30062C73D /* SStream.c */; };
+		7BC1B634196373C30062C73D /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B616196373C30062C73D /* utils.c */; };
+		7BD498DD196624BC003D58E0 /* debugger_mach.defs in Sources */ = {isa = PBXBuildFile; fileRef = 7BD498DC196624BC003D58E0 /* debugger_mach.defs */; settings = {ATTRIBUTES = (Client, Server, ); }; };
+		7BEB9B87191AAFC4000700AC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BEB9B85191AAFC4000700AC /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7B5DD80518954A8300BC5B06 /* MPRESS Dumper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MPRESS Dumper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B5DD80818954A8300BC5B06 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7B5DD80B18954A8300BC5B06 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		7B5DD80C18954A8300BC5B06 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7B5DD80D18954A8300BC5B06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7B5DD81018954A8300BC5B06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B5DD81218954A8300BC5B06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7B5DD81418954A8300BC5B06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7B5DD81618954A8300BC5B06 /* MPRESS Dumper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MPRESS Dumper-Prefix.pch"; sourceTree = "<group>"; };
+		7B5DD81818954A8300BC5B06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		7B5DD81A18954A8300BC5B06 /* mdumperAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mdumperAppDelegate.h; sourceTree = "<group>"; };
+		7B5DD81B18954A8300BC5B06 /* mdumperAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mdumperAppDelegate.m; sourceTree = "<group>"; };
+		7B5DD82018954A8300BC5B06 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7B5DD83C1895882100BC5B06 /* dumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dumper.m; sourceTree = "<group>"; };
+		7B5DD83E1895882900BC5B06 /* dumper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dumper.h; sourceTree = "<group>"; };
+		7B5DD83F1895976800BC5B06 /* breakpoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = breakpoints.m; sourceTree = "<group>"; };
+		7B5DD8411895977000BC5B06 /* breakpoints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = breakpoints.h; sourceTree = "<group>"; };
+		7B5DD8421895987600BC5B06 /* uthash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uthash.h; sourceTree = "<group>"; };
+		7B5DD8431895987600BC5B06 /* utlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utlist.h; sourceTree = "<group>"; };
+		7B5DD84C18959FFF00BC5B06 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Entitlements.plist; sourceTree = "<group>"; };
+		7B70A88F1966C66F0010ABD3 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		7BC1B5DE196373C30062C73D /* X86ATTInstPrinter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = X86ATTInstPrinter.c; sourceTree = "<group>"; };
+		7BC1B5DF196373C30062C73D /* X86Disassembler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = X86Disassembler.c; sourceTree = "<group>"; };
+		7BC1B5E0196373C30062C73D /* X86Disassembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = X86Disassembler.h; sourceTree = "<group>"; };
+		7BC1B5E1196373C30062C73D /* X86DisassemblerDecoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = X86DisassemblerDecoder.c; sourceTree = "<group>"; };
+		7BC1B5E2196373C30062C73D /* X86DisassemblerDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = X86DisassemblerDecoder.h; sourceTree = "<group>"; };
+		7BC1B5E3196373C30062C73D /* X86DisassemblerDecoderCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = X86DisassemblerDecoderCommon.h; sourceTree = "<group>"; };
+		7BC1B5E4196373C30062C73D /* X86GenAsmWriter.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = X86GenAsmWriter.inc; sourceTree = "<group>"; };
+		7BC1B5E5196373C30062C73D /* X86GenAsmWriter1.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = X86GenAsmWriter1.inc; sourceTree = "<group>"; };
+		7BC1B5E6196373C30062C73D /* X86GenAsmWriter1_reduce.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = X86GenAsmWriter1_reduce.inc; sourceTree = "<group>"; };
+		7BC1B5E7196373C30062C73D /* X86GenAsmWriter_reduce.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = X86GenAsmWriter_reduce.inc; sourceTree = "<group>"; };
+		7BC1B5E8196373C30062C73D /* X86GenDisassemblerTables.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = X86GenDisassemblerTables.inc; sourceTree = "<group>"; };
+		7BC1B5E9196373C30062C73D /* X86GenDisassemblerTables_reduce.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = X86GenDisassemblerTables_reduce.inc; sourceTree = "<group>"; };
+		7BC1B5EA196373C30062C73D /* X86GenInstrInfo.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = X86GenInstrInfo.inc; sourceTree = "<group>"; };
+		7BC1B5EB196373C30062C73D /* X86GenInstrInfo_reduce.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = X86GenInstrInfo_reduce.inc; sourceTree = "<group>"; };
+		7BC1B5EC196373C30062C73D /* X86GenRegisterInfo.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = X86GenRegisterInfo.inc; sourceTree = "<group>"; };
+		7BC1B5ED196373C30062C73D /* X86InstPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = X86InstPrinter.h; sourceTree = "<group>"; };
+		7BC1B5EE196373C30062C73D /* X86IntelInstPrinter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = X86IntelInstPrinter.c; sourceTree = "<group>"; };
+		7BC1B5EF196373C30062C73D /* X86Mapping.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = X86Mapping.c; sourceTree = "<group>"; };
+		7BC1B5F0196373C30062C73D /* X86Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = X86Mapping.h; sourceTree = "<group>"; };
+		7BC1B5F1196373C30062C73D /* X86Module.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = X86Module.c; sourceTree = "<group>"; };
+		7BC1B5F3196373C30062C73D /* XCoreDisassembler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XCoreDisassembler.c; sourceTree = "<group>"; };
+		7BC1B5F4196373C30062C73D /* XCoreDisassembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCoreDisassembler.h; sourceTree = "<group>"; };
+		7BC1B5F5196373C30062C73D /* XCoreGenAsmWriter.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = XCoreGenAsmWriter.inc; sourceTree = "<group>"; };
+		7BC1B5F6196373C30062C73D /* XCoreGenDisassemblerTables.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = XCoreGenDisassemblerTables.inc; sourceTree = "<group>"; };
+		7BC1B5F7196373C30062C73D /* XCoreGenInstrInfo.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = XCoreGenInstrInfo.inc; sourceTree = "<group>"; };
+		7BC1B5F8196373C30062C73D /* XCoreGenRegisterInfo.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = XCoreGenRegisterInfo.inc; sourceTree = "<group>"; };
+		7BC1B5F9196373C30062C73D /* XCoreInstPrinter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XCoreInstPrinter.c; sourceTree = "<group>"; };
+		7BC1B5FA196373C30062C73D /* XCoreInstPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCoreInstPrinter.h; sourceTree = "<group>"; };
+		7BC1B5FB196373C30062C73D /* XCoreMapping.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XCoreMapping.c; sourceTree = "<group>"; };
+		7BC1B5FC196373C30062C73D /* XCoreMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCoreMapping.h; sourceTree = "<group>"; };
+		7BC1B5FD196373C30062C73D /* XCoreModule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XCoreModule.c; sourceTree = "<group>"; };
+		7BC1B5FE196373C30062C73D /* cs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cs.c; sourceTree = "<group>"; };
+		7BC1B5FF196373C30062C73D /* cs_priv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cs_priv.h; sourceTree = "<group>"; };
+		7BC1B601196373C30062C73D /* arm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arm.h; sourceTree = "<group>"; };
+		7BC1B602196373C30062C73D /* arm64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arm64.h; sourceTree = "<group>"; };
+		7BC1B603196373C30062C73D /* capstone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = capstone.h; sourceTree = "<group>"; };
+		7BC1B604196373C30062C73D /* mips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mips.h; sourceTree = "<group>"; };
+		7BC1B605196373C30062C73D /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = platform.h; sourceTree = "<group>"; };
+		7BC1B606196373C30062C73D /* ppc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ppc.h; sourceTree = "<group>"; };
+		7BC1B607196373C30062C73D /* sparc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sparc.h; sourceTree = "<group>"; };
+		7BC1B608196373C30062C73D /* systemz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = systemz.h; sourceTree = "<group>"; };
+		7BC1B609196373C30062C73D /* x86.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x86.h; sourceTree = "<group>"; };
+		7BC1B60A196373C30062C73D /* xcore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xcore.h; sourceTree = "<group>"; };
+		7BC1B60B196373C30062C73D /* MathExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathExtras.h; sourceTree = "<group>"; };
+		7BC1B60C196373C30062C73D /* MCDisassembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDisassembler.h; sourceTree = "<group>"; };
+		7BC1B60D196373C30062C73D /* MCFixedLenDisassembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCFixedLenDisassembler.h; sourceTree = "<group>"; };
+		7BC1B60E196373C30062C73D /* MCInst.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MCInst.c; sourceTree = "<group>"; };
+		7BC1B60F196373C30062C73D /* MCInst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCInst.h; sourceTree = "<group>"; };
+		7BC1B610196373C30062C73D /* MCInstrDesc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MCInstrDesc.c; sourceTree = "<group>"; };
+		7BC1B611196373C30062C73D /* MCInstrDesc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCInstrDesc.h; sourceTree = "<group>"; };
+		7BC1B612196373C30062C73D /* MCRegisterInfo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MCRegisterInfo.c; sourceTree = "<group>"; };
+		7BC1B613196373C30062C73D /* MCRegisterInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRegisterInfo.h; sourceTree = "<group>"; };
+		7BC1B614196373C30062C73D /* SStream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SStream.c; sourceTree = "<group>"; };
+		7BC1B615196373C30062C73D /* SStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SStream.h; sourceTree = "<group>"; };
+		7BC1B616196373C30062C73D /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
+		7BC1B617196373C30062C73D /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		7BD498D9196607B6003D58E0 /* LEB128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEB128.h; sourceTree = "<group>"; };
+		7BD498DC196624BC003D58E0 /* debugger_mach.defs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.mig; path = debugger_mach.defs; sourceTree = "<group>"; };
+		7BEB9B8A191AAFCA000700AC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B5DD80218954A8300BC5B06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B5DD80918954A8300BC5B06 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B5DD7FC18954A8300BC5B06 = {
+			isa = PBXGroup;
+			children = (
+				7B70A88F1966C66F0010ABD3 /* README */,
+				7B5DD80E18954A8300BC5B06 /* MPRESS Dumper */,
+				7B5DD80718954A8300BC5B06 /* Frameworks */,
+				7B5DD80618954A8300BC5B06 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B5DD80618954A8300BC5B06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B5DD80518954A8300BC5B06 /* MPRESS Dumper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B5DD80718954A8300BC5B06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B5DD80818954A8300BC5B06 /* Cocoa.framework */,
+				7B5DD80A18954A8300BC5B06 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B5DD80A18954A8300BC5B06 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B5DD80B18954A8300BC5B06 /* AppKit.framework */,
+				7B5DD80C18954A8300BC5B06 /* CoreData.framework */,
+				7B5DD80D18954A8300BC5B06 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		7B5DD80E18954A8300BC5B06 /* MPRESS Dumper */ = {
+			isa = PBXGroup;
+			children = (
+				7B5DD81B18954A8300BC5B06 /* mdumperAppDelegate.m */,
+				7B5DD81A18954A8300BC5B06 /* mdumperAppDelegate.h */,
+				7B5DD83C1895882100BC5B06 /* dumper.m */,
+				7B5DD83E1895882900BC5B06 /* dumper.h */,
+				7B5DD83F1895976800BC5B06 /* breakpoints.m */,
+				7B5DD8411895977000BC5B06 /* breakpoints.h */,
+				7B5DD8421895987600BC5B06 /* uthash.h */,
+				7B5DD8431895987600BC5B06 /* utlist.h */,
+				7BD498DC196624BC003D58E0 /* debugger_mach.defs */,
+				7BC1B5DB196373C30062C73D /* capstone */,
+				7B5DD82018954A8300BC5B06 /* Images.xcassets */,
+				7BEB9B85191AAFC4000700AC /* MainMenu.xib */,
+				7B5DD80F18954A8300BC5B06 /* Supporting Files */,
+			);
+			path = "MPRESS Dumper";
+			sourceTree = "<group>";
+		};
+		7B5DD80F18954A8300BC5B06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B5DD81018954A8300BC5B06 /* Info.plist */,
+				7B5DD81118954A8300BC5B06 /* InfoPlist.strings */,
+				7B5DD81418954A8300BC5B06 /* main.m */,
+				7B5DD81618954A8300BC5B06 /* MPRESS Dumper-Prefix.pch */,
+				7B5DD81718954A8300BC5B06 /* Credits.rtf */,
+				7B5DD84C18959FFF00BC5B06 /* Entitlements.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7BC1B5DB196373C30062C73D /* capstone */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B5DC196373C30062C73D /* arch */,
+				7BC1B5FE196373C30062C73D /* cs.c */,
+				7BC1B5FF196373C30062C73D /* cs_priv.h */,
+				7BC1B600196373C30062C73D /* include */,
+				7BC1B60B196373C30062C73D /* MathExtras.h */,
+				7BC1B60C196373C30062C73D /* MCDisassembler.h */,
+				7BC1B60D196373C30062C73D /* MCFixedLenDisassembler.h */,
+				7BC1B60E196373C30062C73D /* MCInst.c */,
+				7BC1B60F196373C30062C73D /* MCInst.h */,
+				7BC1B610196373C30062C73D /* MCInstrDesc.c */,
+				7BC1B611196373C30062C73D /* MCInstrDesc.h */,
+				7BC1B612196373C30062C73D /* MCRegisterInfo.c */,
+				7BC1B613196373C30062C73D /* MCRegisterInfo.h */,
+				7BC1B614196373C30062C73D /* SStream.c */,
+				7BC1B615196373C30062C73D /* SStream.h */,
+				7BC1B616196373C30062C73D /* utils.c */,
+				7BC1B617196373C30062C73D /* utils.h */,
+				7BD498D9196607B6003D58E0 /* LEB128.h */,
+			);
+			path = capstone;
+			sourceTree = "<group>";
+		};
+		7BC1B5DC196373C30062C73D /* arch */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B5DD196373C30062C73D /* X86 */,
+				7BC1B5F2196373C30062C73D /* XCore */,
+			);
+			path = arch;
+			sourceTree = "<group>";
+		};
+		7BC1B5DD196373C30062C73D /* X86 */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B5DE196373C30062C73D /* X86ATTInstPrinter.c */,
+				7BC1B5DF196373C30062C73D /* X86Disassembler.c */,
+				7BC1B5E0196373C30062C73D /* X86Disassembler.h */,
+				7BC1B5E1196373C30062C73D /* X86DisassemblerDecoder.c */,
+				7BC1B5E2196373C30062C73D /* X86DisassemblerDecoder.h */,
+				7BC1B5E3196373C30062C73D /* X86DisassemblerDecoderCommon.h */,
+				7BC1B5E4196373C30062C73D /* X86GenAsmWriter.inc */,
+				7BC1B5E5196373C30062C73D /* X86GenAsmWriter1.inc */,
+				7BC1B5E6196373C30062C73D /* X86GenAsmWriter1_reduce.inc */,
+				7BC1B5E7196373C30062C73D /* X86GenAsmWriter_reduce.inc */,
+				7BC1B5E8196373C30062C73D /* X86GenDisassemblerTables.inc */,
+				7BC1B5E9196373C30062C73D /* X86GenDisassemblerTables_reduce.inc */,
+				7BC1B5EA196373C30062C73D /* X86GenInstrInfo.inc */,
+				7BC1B5EB196373C30062C73D /* X86GenInstrInfo_reduce.inc */,
+				7BC1B5EC196373C30062C73D /* X86GenRegisterInfo.inc */,
+				7BC1B5ED196373C30062C73D /* X86InstPrinter.h */,
+				7BC1B5EE196373C30062C73D /* X86IntelInstPrinter.c */,
+				7BC1B5EF196373C30062C73D /* X86Mapping.c */,
+				7BC1B5F0196373C30062C73D /* X86Mapping.h */,
+				7BC1B5F1196373C30062C73D /* X86Module.c */,
+			);
+			path = X86;
+			sourceTree = "<group>";
+		};
+		7BC1B5F2196373C30062C73D /* XCore */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B5F3196373C30062C73D /* XCoreDisassembler.c */,
+				7BC1B5F4196373C30062C73D /* XCoreDisassembler.h */,
+				7BC1B5F5196373C30062C73D /* XCoreGenAsmWriter.inc */,
+				7BC1B5F6196373C30062C73D /* XCoreGenDisassemblerTables.inc */,
+				7BC1B5F7196373C30062C73D /* XCoreGenInstrInfo.inc */,
+				7BC1B5F8196373C30062C73D /* XCoreGenRegisterInfo.inc */,
+				7BC1B5F9196373C30062C73D /* XCoreInstPrinter.c */,
+				7BC1B5FA196373C30062C73D /* XCoreInstPrinter.h */,
+				7BC1B5FB196373C30062C73D /* XCoreMapping.c */,
+				7BC1B5FC196373C30062C73D /* XCoreMapping.h */,
+				7BC1B5FD196373C30062C73D /* XCoreModule.c */,
+			);
+			path = XCore;
+			sourceTree = "<group>";
+		};
+		7BC1B600196373C30062C73D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B601196373C30062C73D /* arm.h */,
+				7BC1B602196373C30062C73D /* arm64.h */,
+				7BC1B603196373C30062C73D /* capstone.h */,
+				7BC1B604196373C30062C73D /* mips.h */,
+				7BC1B605196373C30062C73D /* platform.h */,
+				7BC1B606196373C30062C73D /* ppc.h */,
+				7BC1B607196373C30062C73D /* sparc.h */,
+				7BC1B608196373C30062C73D /* systemz.h */,
+				7BC1B609196373C30062C73D /* x86.h */,
+				7BC1B60A196373C30062C73D /* xcore.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B5DD80418954A8300BC5B06 /* MPRESS Dumper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B5DD83618954A8300BC5B06 /* Build configuration list for PBXNativeTarget "MPRESS Dumper" */;
+			buildPhases = (
+				7B5DD80118954A8300BC5B06 /* Sources */,
+				7B5DD80218954A8300BC5B06 /* Frameworks */,
+				7B5DD80318954A8300BC5B06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MPRESS Dumper";
+			productName = "MPRESS Dumper";
+			productReference = 7B5DD80518954A8300BC5B06 /* MPRESS Dumper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B5DD7FD18954A8300BC5B06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = mdumper;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Put.as;
+			};
+			buildConfigurationList = 7B5DD80018954A8300BC5B06 /* Build configuration list for PBXProject "MPRESS Dumper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7B5DD7FC18954A8300BC5B06;
+			productRefGroup = 7B5DD80618954A8300BC5B06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B5DD80418954A8300BC5B06 /* MPRESS Dumper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7B5DD80318954A8300BC5B06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B70A8901966C66F0010ABD3 /* README in Resources */,
+				7B5DD81318954A8300BC5B06 /* InfoPlist.strings in Resources */,
+				7BEB9B87191AAFC4000700AC /* MainMenu.xib in Resources */,
+				7B5DD82118954A8300BC5B06 /* Images.xcassets in Resources */,
+				7B5DD81918954A8300BC5B06 /* Credits.rtf in Resources */,
+				7B5DD84D18959FFF00BC5B06 /* Entitlements.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B5DD80118954A8300BC5B06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BC1B61D196373C30062C73D /* X86GenAsmWriter1_reduce.inc in Sources */,
+				7BC1B629196373C30062C73D /* XCoreGenDisassemblerTables.inc in Sources */,
+				7BC1B62C196373C30062C73D /* XCoreInstPrinter.c in Sources */,
+				7B5DD8401895976800BC5B06 /* breakpoints.m in Sources */,
+				7BC1B61E196373C30062C73D /* X86GenAsmWriter_reduce.inc in Sources */,
+				7BC1B633196373C30062C73D /* SStream.c in Sources */,
+				7B5DD81518954A8300BC5B06 /* main.m in Sources */,
+				7BC1B61A196373C30062C73D /* X86DisassemblerDecoder.c in Sources */,
+				7BC1B624196373C30062C73D /* X86IntelInstPrinter.c in Sources */,
+				7BC1B62A196373C30062C73D /* XCoreGenInstrInfo.inc in Sources */,
+				7BC1B618196373C30062C73D /* X86ATTInstPrinter.c in Sources */,
+				7BC1B631196373C30062C73D /* MCInstrDesc.c in Sources */,
+				7BC1B626196373C30062C73D /* X86Module.c in Sources */,
+				7BC1B61C196373C30062C73D /* X86GenAsmWriter1.inc in Sources */,
+				7BD498DD196624BC003D58E0 /* debugger_mach.defs in Sources */,
+				7BC1B620196373C30062C73D /* X86GenDisassemblerTables_reduce.inc in Sources */,
+				7BC1B62B196373C30062C73D /* XCoreGenRegisterInfo.inc in Sources */,
+				7BC1B634196373C30062C73D /* utils.c in Sources */,
+				7BC1B61F196373C30062C73D /* X86GenDisassemblerTables.inc in Sources */,
+				7BC1B62F196373C30062C73D /* cs.c in Sources */,
+				7BC1B622196373C30062C73D /* X86GenInstrInfo_reduce.inc in Sources */,
+				7BC1B619196373C30062C73D /* X86Disassembler.c in Sources */,
+				7B5DD83D1895882100BC5B06 /* dumper.m in Sources */,
+				7BC1B632196373C30062C73D /* MCRegisterInfo.c in Sources */,
+				7BC1B62D196373C30062C73D /* XCoreMapping.c in Sources */,
+				7BC1B628196373C30062C73D /* XCoreGenAsmWriter.inc in Sources */,
+				7BC1B621196373C30062C73D /* X86GenInstrInfo.inc in Sources */,
+				7BC1B61B196373C30062C73D /* X86GenAsmWriter.inc in Sources */,
+				7BC1B627196373C30062C73D /* XCoreDisassembler.c in Sources */,
+				7BC1B623196373C30062C73D /* X86GenRegisterInfo.inc in Sources */,
+				7BC1B62E196373C30062C73D /* XCoreModule.c in Sources */,
+				7B5DD81C18954A8300BC5B06 /* mdumperAppDelegate.m in Sources */,
+				7BC1B625196373C30062C73D /* X86Mapping.c in Sources */,
+				7BC1B630196373C30062C73D /* MCInst.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7B5DD81118954A8300BC5B06 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B5DD81218954A8300BC5B06 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7B5DD81718954A8300BC5B06 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B5DD81818954A8300BC5B06 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		7BEB9B85191AAFC4000700AC /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7BEB9B8A191AAFCA000700AC /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7B5DD83418954A8300BC5B06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7B5DD83518954A8300BC5B06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7B5DD83718954A8300BC5B06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MPRESS Dumper/MPRESS Dumper-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"$(SRCROOT)/**",
+				);
+				INFOPLIST_FILE = "MPRESS Dumper/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = (
+					"-DCAPSTONE_HAS_XCORE",
+					"-DCAPSTONE_HAS_X86",
+					"-DCAPSTONE_USE_SYS_DYN_MEM",
+				);
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"$PROJECT_DIR/MPRESS\\ Dumper/Info.plist",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7B5DD83818954A8300BC5B06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MPRESS Dumper/MPRESS Dumper-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"$(SRCROOT)/**",
+				);
+				INFOPLIST_FILE = "MPRESS Dumper/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = (
+					"-DCAPSTONE_HAS_XCORE",
+					"-DCAPSTONE_HAS_X86",
+					"-DCAPSTONE_USE_SYS_DYN_MEM",
+				);
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"$PROJECT_DIR/MPRESS\\ Dumper/Info.plist",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B5DD80018954A8300BC5B06 /* Build configuration list for PBXProject "MPRESS Dumper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B5DD83418954A8300BC5B06 /* Debug */,
+				7B5DD83518954A8300BC5B06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B5DD83618954A8300BC5B06 /* Build configuration list for PBXNativeTarget "MPRESS Dumper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B5DD83718954A8300BC5B06 /* Debug */,
+				7B5DD83818954A8300BC5B06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B5DD7FD18954A8300BC5B06 /* Project object */;
+}

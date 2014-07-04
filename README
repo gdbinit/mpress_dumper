@@ -1,0 +1,41 @@
+._____.___ ._______ .______  ._______.________.________
+ :         |: ____  |: __   \ : .____/|    ___/|    ___/
+ |   \  /  ||    :  ||  \____|| : _/\ |___    \|___    \
+ |   |\/   ||   |___||   :  \ |   /  \|       /|       /
+ |___| |   ||___|    |   |___\|_.: __/|__:___/ |__:___/
+ |___|         |___|       :/      :        :
+
+ .______  .____     ._____.___ ._______ ._______.______
+ :_ _   \ |    |___ :         |: ____  |: .____/: __   \
+ |   |   ||    |   ||   \  /  ||    :  || : _/\ |  \____|
+ | . |   ||    :   ||   |\/   ||   |___||   /  \|   :  \
+ |. ____/ |        ||___| |   ||___|    |_.: __/|   |___\
+ :/      |. _____/       |___|            :/   |___|
+ :        :/
+          :
+
+MPRESS Packer dumper
+Copyright (c) 2014 Pedro Vilaca. All rights reserved.
+http://reverse.put.as - reverser@put.as
+
+This is a MPRESS dumper utility as described in my Shakacon'14 presentation.
+(http://reverse.put.as/2014/06/26/shakacon-6-presentation-fuck-you-hacking-team-from-portugal-with-love/)
+
+At the moment it only supports dumping of 32 bits targets. You can finish the 64 bits targets support ;-).
+
+Not a spectacular example of Cocoa code, I definitely suck at it and the whole design could be much better.
+In particular how dumping integrates with the GUI and returns unpacking result.
+
+Feel free to improve this and submit your patches. 
+Right now I don't have much time to make this something better :-(.
+
+Uses Capstone for all disassembling needs.
+
+Since this is a custom debugger it needs to be codesigned to run in latest OS X versions!
+Don't forget to modify the Xcode project to point to your certificate.
+
+You should run this in a VM if trying to unpack malware code since it needs to execute the code to unpack
+and dump.
+
+Enjoy,
+fG!
