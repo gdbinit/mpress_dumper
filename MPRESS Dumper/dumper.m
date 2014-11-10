@@ -182,7 +182,7 @@ unpack_mpress(const char *sourcePath, const char *targetPath, mach_vm_address_t 
         targetFile = targetPath;
         /* now we can install the debugger */
         install_debugger(pid);
-        /* find addresses and insert breakpoints */
+        /* find initial addresses and insert breakpoints */
         mach_vm_address_t first_bp = 0;
         mach_vm_address_t second_bp = 0;
         if (find_unpack_addresses(entrypoint, end_addr, &first_bp, &second_bp) != KERN_SUCCESS)
@@ -226,7 +226,11 @@ unpack_mpress(const char *sourcePath, const char *targetPath, mach_vm_address_t 
 #pragma mark -
 #pragma mark Functions to find addresses
 
-/* find the location of the second stub */
+/* 
+ * find the initial breakpoint addresses to help find the second stage decryption stub
+ * we are interesting in locating where the memory will be decrypted to (via mmap)
+ * and where it jumps to the second decryption stub
+ */
 static kern_return_t
 find_unpack_addresses(mach_vm_address_t start_addr, mach_vm_address_t end_addr, mach_vm_address_t *first_bp, mach_vm_address_t *second_bp)
 {
@@ -278,6 +282,7 @@ find_unpack_addresses(mach_vm_address_t start_addr, mach_vm_address_t end_addr, 
     for (size_t i = 0; i < count; i++)
     {
         /* this looks up the push 1012h instruction which is the flags parameter to mmap inside the first stub */
+        /* gives us where the first unpacking will occur */
         if (insn[i].id == X86_INS_PUSH &&
             insn[i].detail != NULL &&       // make sure there are details
             insn[i].detail->x86.op_count && // make sure there are operands
@@ -289,6 +294,7 @@ find_unpack_addresses(mach_vm_address_t start_addr, mach_vm_address_t end_addr, 
             found_bp1++;
         }
         /* this is the jmp after the unpacking code is called */
+        /* starts executing the second stub */
         else if (insn[i].id == X86_INS_JMP &&
                  found_bp2 == 0)
         {
@@ -612,8 +618,7 @@ catch_mach_exception_raise_state_identity (mach_port_t exception_port,
 #pragma mark -
 #pragma mark The functions that deal with the breakpoints
 
-/* the first breakpoint we retrieve the address and size where the original binary
- * will be unpacked to.
+/* the first breakpoint we retrieve the address and size where the original binary will be unpacked to.
  * the breakpoint relies on instruction "push 1012h"
  * which contains the flags passed to mmap the unpacking area.
  * XXX: better then this would be to breakpoint on the call and just dump the parameters from the stack!
@@ -634,7 +639,7 @@ process_firstbreakpoint(mach_port_t thread, int *flavor, thread_state_t old_stat
             /* ebx contains the length, ecx the address */
             g_unpacking_addr = ts->uts.ts32.__ecx;
             g_unpacking_size = ts->uts.ts32.__ebx;
-            NSLog(@"Length %x Address %x", ts->uts.ts32.__ebx, ts->uts.ts32.__ecx);
+            NSLog(@"Unpacking address: 0x%x Length: 0x%x ", ts->uts.ts32.__ecx, ts->uts.ts32.__ebx);
             ts->uts.ts32.__eip = (unsigned int)eip;
             memcpy(new_state, old_state, x86_THREAD_STATE32_COUNT * sizeof(natural_t));
         }
@@ -655,6 +660,10 @@ process_firstbreakpoint(mach_port_t thread, int *flavor, thread_state_t old_stat
  * for starting the second stage that was also unpacked
  * we disassemble the instruction and retrieve the target address
  * it's done this way because there is data in the middle of the disassembly that can create problems
+ *
+ * NOTE: what we processed in process_firstbreakpoint() is the whote unpacked area but we don't know
+ *       from that info where the second stub is located at. it's here where we find it.
+ *       The second stage is fully unpacked when we hit this breakpoint.
  */
 static kern_return_t
 process_secondbreakpoint(mach_port_t thread, int *flavor, thread_state_t old_state, thread_state_t new_state)
