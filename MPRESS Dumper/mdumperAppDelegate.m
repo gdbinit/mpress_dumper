@@ -140,6 +140,14 @@ extern uint32 targetMagic;
         }
     }
     
+    /* test if there any commands and they make some sense */
+    if (mh->ncmds == 0 || mh->sizeofcmds == 0)
+    {
+        /* XXX: add error msg to the gui */
+        NSLog(@"Mach-O header contains invalid data.");
+        return;
+    }
+    
     /* verify if there's a MPRESS segment */
     char *loadCmd_addr = (char*)mh + headerSize;
     int foundMPRESS = 0;
