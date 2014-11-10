@@ -682,6 +682,25 @@ process_secondbreakpoint(mach_port_t thread, int *flavor, thread_state_t old_sta
             memcpy(new_state, old_state, x86_THREAD_STATE32_COUNT * sizeof(natural_t));
             /* locate the next breakpoint and set it */
             mach_vm_address_t bp = 0;
+#if DUMP_STAGES == 1
+            mach_vm_size_t len = g_unpacking_size;
+            vm_offset_t unpacked_data;
+            mach_msg_type_number_t bytesread = 0;
+            kern_return_t kr = 0;
+            kr = mach_vm_read(g_targetTask, g_unpacking_addr, len, &unpacked_data, &bytesread);
+            if (kr == KERN_SUCCESS)
+            {
+                char *target = NULL;
+                size_t target_size = strlen(targetFile) + 20 + 1;
+                target = malloc(target_size);
+                snprintf(target, target_size , "%s_2ndstub", targetFile);
+                target[target_size-1] = '\0';
+                FILE *fileToWrite = fopen(target, "wb");
+                fwrite((void*)unpacked_data, len, 1, fileToWrite);
+                fclose(fileToWrite);
+                mach_vm_deallocate(mach_task_self(), unpacked_data, bytesread);
+            }
+#endif
             if (find_secondstage_entrypoint(eip, &bp) == KERN_SUCCESS)
             {
                 insert_breakpoint(thread, bp, process_thirdbreakpoint, "ccc");

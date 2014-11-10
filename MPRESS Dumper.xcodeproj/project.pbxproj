@@ -131,6 +131,7 @@
 		7BD498D9196607B6003D58E0 /* LEB128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEB128.h; sourceTree = "<group>"; };
 		7BD498DC196624BC003D58E0 /* debugger_mach.defs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.mig; path = debugger_mach.defs; sourceTree = "<group>"; };
 		7BEB9B8A191AAFCA000700AC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7BFED9E11A11701200E4DD3D /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +194,7 @@
 				7B5DD8411895977000BC5B06 /* breakpoints.h */,
 				7B5DD8421895987600BC5B06 /* uthash.h */,
 				7B5DD8431895987600BC5B06 /* utlist.h */,
+				7BFED9E11A11701200E4DD3D /* config.h */,
 				7BD498DC196624BC003D58E0 /* debugger_mach.defs */,
 				7BC1B5DB196373C30062C73D /* capstone */,
 				7B5DD82018954A8300BC5B06 /* Images.xcassets */,
