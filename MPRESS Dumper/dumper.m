@@ -136,7 +136,7 @@ unpack_mpress(const char *sourcePath, const char *targetPath, mach_vm_address_t 
     NSLog(@"Executing %s...", __FUNCTION__);
     if (getuid() == 0)
 	{
-		NSLog(@"[ERROR] Please do not run me as root, it will not work! Fix permissions to procmod\n");
+		NSLog(@"[ERROR] Please do not run me as root, it will not work! Fix permissions to procmod or add necessary entitlements/code signing.");
 		exit(-1);
 	}
     
@@ -284,7 +284,7 @@ find_unpack_addresses(mach_vm_address_t start_addr, mach_vm_address_t end_addr, 
             insn[i].detail->x86.operands[0].imm == 0x1012 &&
             found_bp1 == 0)
         {
-            NSLog(@"Address is 0x%llx", insn[i].address);
+            NSLog(@"push 1012h address is: 0x%llx", insn[i].address);
             *first_bp = insn[i].address;
             found_bp1++;
         }
@@ -295,7 +295,7 @@ find_unpack_addresses(mach_vm_address_t start_addr, mach_vm_address_t end_addr, 
             /* the target address of the jump can be found in the imm */
             /* this is a bit different versus diStorm */
             *second_bp = insn[i].detail->x86.operands[0].imm;
-            NSLog(@"JMP is %llx at address %llx %x %llx", *second_bp, insn[i].address, insn[i].size, insn[i].detail->x86.operands[0].imm);
+            NSLog(@"Second stage JMP located at 0x%llx at address %llx %llx", *second_bp, insn[i].address, insn[i].detail->x86.operands[0].imm);
             found_bp2++;
             break;
         }
@@ -356,11 +356,10 @@ find_secondstage_entrypoint(mach_vm_address_t start, mach_vm_address_t *out_ep)
     {
         if (insn[i].id == X86_INS_JMP)
         {
-            NSLog(@"Found second stage entrypoint address!");
             /* the target address of the jump can be found in the imm */
             /* this is a bit different versus diStorm */
             *out_ep = insn[i].detail->x86.operands[0].imm;
-            NSLog(@"Second stage entrypoint JMP is %llx", *out_ep);
+            NSLog(@"Second stage entrypoint JMP is: 0x%llx", *out_ep);
             mach_vm_deallocate(mach_task_self(), disasmBuf, bytesRead);
             cs_free(insn, count);
             return KERN_SUCCESS;
@@ -712,7 +711,13 @@ process_thirdbreakpoint(mach_port_t thread, int *flavor, thread_state_t old_stat
             find_oep(eip, &oep_bp);
             ts->uts.ts32.__eip = (unsigned int)eip;
             memcpy(new_state, old_state, x86_THREAD_STATE32_COUNT * sizeof(natural_t));
-            NSLog(@"Inserting breakpoint to find OEP...");
+            if (oep_bp == 0)
+            {
+                NSLog(@"OEP breakpoint not found, impossible to proceed.");
+                exit(-1);
+            }
+
+            NSLog(@"Inserting breakpoint to find OEP at 0x%llx ...", oep_bp);
             insert_breakpoint(thread, oep_bp, process_oepbreakpoint, "ddd");
         }
         /* XXX: not finished */
