@@ -82,7 +82,7 @@ mach_vm_address_t g_unpacking_addr = 0;
 uint64_t g_unpacking_size = 0;
 static int l_dumping_finished = 0;
 
-static const char *targetFile = NULL;
+static const char *g_targetFile = NULL;
 
 // exception message we will receive from the kernel
 // these structures must be different based on the type of exception we want
@@ -179,7 +179,7 @@ unpack_mpress(const char *sourcePath, const char *targetPath, mach_vm_address_t 
 		/* wait for the child */
 		waitpid(pid, &status,0);
 		errno = 0;
-        targetFile = targetPath;
+        g_targetFile = targetPath;
         /* now we can install the debugger */
         install_debugger(pid);
         /* find initial addresses and insert breakpoints */
@@ -691,9 +691,9 @@ process_secondbreakpoint(mach_port_t thread, int *flavor, thread_state_t old_sta
             if (kr == KERN_SUCCESS)
             {
                 char *target = NULL;
-                size_t target_size = strlen(targetFile) + 20 + 1;
+                size_t target_size = strlen(g_targetFile) + 20 + 1;
                 target = malloc(target_size);
-                snprintf(target, target_size , "%s_2ndstub", targetFile);
+                snprintf(target, target_size , "%s_2ndstub", g_targetFile);
                 target[target_size-1] = '\0';
                 FILE *fileToWrite = fopen(target, "wb");
                 fwrite((void*)unpacked_data, len, 1, fileToWrite);
@@ -814,7 +814,7 @@ static kern_return_t
 process_and_dump_to_disk(void)
 {
     NSLog(@"Executing %s...", __FUNCTION__);
-    FILE *fileToWrite = fopen(targetFile, "wb");
+    FILE *fileToWrite = fopen(g_targetFile, "wb");
     vm_offset_t writeBuf;
     mach_msg_type_number_t bytesRead = 0;
     mach_vm_size_t len = g_unpacking_size;
