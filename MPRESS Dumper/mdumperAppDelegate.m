@@ -157,6 +157,7 @@ extern uint32 targetMagic;
     for (uint32_t i = 0; i < mh->ncmds; i++)
     {
         struct load_command *loadCmd = (struct load_command*)loadCmd_addr;
+        /* XXX: needs to be reworked in case there's another matching segment with bogus data */
         if (loadCmd->cmd == LC_SEGMENT)
         {
             struct segment_command *segCmd = (struct segment_command*)loadCmd_addr;
@@ -167,6 +168,7 @@ extern uint32 targetMagic;
                 foundMPRESS++;
             }
         }
+        /* XXX: needs to be reworked in case there's another matching segment with bogus data */
         else if (loadCmd->cmd == LC_SEGMENT_64)
         {
             struct segment_command_64 *segCmd = (struct segment_command_64*)loadCmd_addr;
