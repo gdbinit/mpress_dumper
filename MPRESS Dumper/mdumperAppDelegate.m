@@ -77,27 +77,21 @@ extern uint32 targetMagic;
     /* verify if we have source and target */
     NSAlert* msgBox = [[NSAlert alloc] init];
     [msgBox setAlertStyle:NSCriticalAlertStyle];
-    [msgBox setMessageText:@"Missing files!"];
-    int showAlert = 0;
+    [msgBox setMessageText:@"Missing file!"];
+
     if ([source isEqualToString:@""])
     {
         [msgBox setInformativeText:@"Source file is missing."];
-        showAlert++;
-    }
-    else if ([target isEqualToString:@""])
-    {
-        [msgBox setInformativeText:@"Target file is missing."];
-        showAlert++;
-    }
-    if (showAlert)
-    {
         [msgBox beginSheetModalForWindow:self.window
                            modalDelegate:self
                           didEndSelector:nil
                              contextInfo:nil];
-        NSLog(@"Missing source or target file!");
+        NSLog(@"Missing source file!");
         return;
     }
+    
+    /* set target to current user home directory */
+    target = [NSString stringWithFormat:@"%@/%@_unpacked", NSHomeDirectory(), [source lastPathComponent]];
     
     NSLog(@"Asked to dump from %@ to %@", source, target);
     
@@ -254,32 +248,11 @@ extern uint32 targetMagic;
     }
 }
 
-- (IBAction)selectOutputFile:(id)sender
-{
-    NSSavePanel* saveDialog = [NSSavePanel savePanel];
-    /* Display the dialog.  If the OK button was pressed, process the files. */
-    if ( [saveDialog runModal] == NSFileHandlingPanelOKButton )
-    {
-        targetURL = [saveDialog URL];
-        target = [targetURL path];
-        NSLog(@"%@", target);
-        /* update the text field */
-        [self.targetFile setStringValue:target];
-    }
-}
-
 - (IBAction)updateSourceFile:(id)sender
 {
     source = [self.sourceFile stringValue];
     sourceURL = [NSURL fileURLWithPath:source];
     NSLog(@"New source value %@", source);
-}
-
-- (IBAction)updateTargetFile:(id)sender
-{
-    target = [self.targetFile stringValue];
-    targetURL = [NSURL fileURLWithPath:target];
-    NSLog(@"New target value %@", target);
 }
 
 @end

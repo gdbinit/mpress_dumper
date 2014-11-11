@@ -58,12 +58,9 @@
 }
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSTextField *sourceFile;
-@property (weak) IBOutlet NSTextField *targetFile;
 
 - (IBAction)startDump:(id)sender;
 - (IBAction)selectSourceFile:(id)sender;
-- (IBAction)selectOutputFile:(id)sender;
 - (IBAction)updateSourceFile:(id)sender;
-- (IBAction)updateTargetFile:(id)sender;
 
 @end
